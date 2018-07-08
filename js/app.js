@@ -1,10 +1,10 @@
 // config
-var bank = 'steemdice1';
+var bank = 'fairdice';
 var houseedge = 0.02;
 var maxwin_steem = 100;
 var maxwin_sbd = 25;
 
-var steemws = 'wss://steemd.pevo.science';
+var steemws = 'https://api.steemit.com';
 
 // display
 var updateInterval = 3000;
@@ -24,8 +24,9 @@ var wif = '';
 // main function
 $( document ).ready(function() {
 
-  steem.config.set('websocket',steemws);
-  steem.setMaxListeners(0);
+  steem.api.setOptions({ url: steemws });
+  //steem.config.set('websocket',steemws);
+  //steem.setMaxListeners(0);
   // fill in variables
   $("#houseEdge").text(houseedge * 100);
   $("#max_win_steem").text(maxwin_steem);
