@@ -274,6 +274,7 @@ var newBankState = function(data) {
   var table = $('#txTable');
   var history = data['accounts'][bank]['transfer_history'];
   var amount = history.length;
+  if (amount > 26) 
   for(i = amount - 26; i < amount; i++) {
     tx = history[i];
     // only proceed for transfers to the bank which are at least a block old
